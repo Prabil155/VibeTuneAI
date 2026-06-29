@@ -1,10 +1,7 @@
+import Home from "./pages/Home";
+
 function App() {
-  return (
-    <div>
-      <h1> VibeTune AI</h1>
-      <p>Your AI-powered Instagram music recommender</p>
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
