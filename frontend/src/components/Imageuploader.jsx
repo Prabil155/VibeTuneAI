@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { UploadCloud, X } from "lucide-react";
+import { Upload, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function ImageUploader() {
   const [image, setImage] = useState(null);
@@ -10,6 +11,8 @@ function ImageUploader() {
       setImage(URL.createObjectURL(acceptedFiles[0]));
     }
   }, []);
+
+  const navigate = useNavigate();
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -34,7 +37,7 @@ function ImageUploader() {
         >
           <input {...getInputProps()} />
 
-          <UploadCloud size={60} className="text-purple-500" />
+          <Upload size={60} className="text-purple-500" />
 
           <h2 className="text-2xl font-semibold mt-5">
             Drag & Drop Image
@@ -50,22 +53,33 @@ function ImageUploader() {
 
         </div>
       ) : (
-        <div className="relative">
+  <div className="flex flex-col items-center">
 
-          <img
-            src={image}
-            alt="Preview"
-            className="rounded-3xl w-[450px] shadow-2xl"
-          />
+  <div className="relative">
 
-          <button
-            onClick={() => setImage(null)}
-            className="absolute top-3 right-3 bg-red-500 rounded-full p-2"
-          >
-            <X />
-          </button>
+    <img
+      src={image}
+      alt="Preview"
+      className="rounded-3xl w-[450px] shadow-2xl"
+    />
 
-        </div>
+    <button
+      onClick={() => setImage(null)}
+      className="absolute top-3 right-3 bg-red-500 rounded-full p-2"
+    >
+      <X />
+    </button>
+
+  </div>
+
+  <button
+    onClick={() => navigate("/results")}
+    className="mt-8 bg-purple-600 hover:bg-purple-700 transition px-8 py-3 rounded-xl text-lg font-semibold"
+  >
+    🎵 Analyze My Vibe
+  </button>
+
+</div>
       )}
 
     </div>
