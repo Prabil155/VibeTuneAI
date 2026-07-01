@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
+import ImageUploader from "../components/ImageUploader";
 
 function Home() {
   return (
@@ -9,6 +10,10 @@ function Home() {
       <Navbar />
 
       <Hero />
+      
+
+      <ImageUploader />
+
 
       <Footer />
 
