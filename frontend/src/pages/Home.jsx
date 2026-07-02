@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import ImageUploader from "../components/ImageUploader";
+import Features from "../components/Features";
 
 function Home() {
   return (
@@ -13,6 +14,8 @@ function Home() {
       
 
       <ImageUploader />
+
+      <Features />
 
 
       <Footer />

@@ -4,35 +4,35 @@ function Hero() {
   return (
     <section className="flex flex-col items-center justify-center text-center mt-20 px-6">
 
-      <h1 className="text-6xl md:text-7xl font-extrabold leading-tight">
-        Find the
-        <span className="text-purple-500"> Perfect Song </span>
-        for your Photo
+      <h1 className="text-6xl md:text-7xl font-extrabold text-center leading-tight">
+  Find the <span className="text-purple-500">Perfect Soundtrack</span>
+  <br />
+  for Your Moment
       </h1>
 
-      <p className="text-gray-400 mt-8 max-w-2xl text-xl">
-        Upload an Instagram photo and let AI analyze your mood,
-        outfit, location and vibe to recommend the perfect soundtrack.
-      </p>
+      <p className="text-xl text-gray-400 text-center max-w-3xl mt-8">
+  One photo. Infinite vibes.
+  <br />
+  AI analyzes your mood, outfit, location, lighting and aesthetic
+  to recommend the perfect soundtrack for your Instagram post.
+</p>
+<div className="flex flex-wrap justify-center gap-4 mt-10">
 
-      <button
-        className="
-        mt-10
-        flex
-        items-center
-        gap-3
-        bg-purple-600
-        hover:bg-purple-700
-        transition
-        px-8
-        py-4
-        rounded-2xl
-        text-xl
-        font-semibold"
-      >
-        <Upload size={24} />
-        Upload Image
-      </button>
+  <div className="bg-slate-800 border border-slate-700 rounded-full px-5 py-2">
+    ✨ AI Powered
+  </div>
+
+  <div className="bg-slate-800 border border-slate-700 rounded-full px-5 py-2">
+    📷 Image Understanding
+  </div>
+
+  <div className="bg-slate-800 border border-slate-700 rounded-full px-5 py-2">
+    🎵 Music Recommendation
+  </div>
+
+</div>
+
+      
 
     </section>
   );

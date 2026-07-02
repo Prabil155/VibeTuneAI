@@ -1,59 +1,82 @@
+import { useLocation, useNavigate } from "react-router-dom";
+
 function Results() {
-  const dummyData = {
-    mood: "Chill 😌",
-    location: "Beach 🏖️",
-    outfit: "Casual Summer 👕",
-    lighting: "Golden Hour 🌅",
-    vibeScore: 94,
-    songs: [
-      { title: "Golden Hour", artist: "JVKE", match: "96%" },
-      { title: "Sunset Lover", artist: "Petit Biscuit", match: "94%" },
-      { title: "Paradise", artist: "Coldplay", match: "92%" },
-    ],
-    caption: "Golden skies and unforgettable memories.",
-  };
+  const { state } = useLocation();
+  const navigate = useNavigate();
+
+  if (!state) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-950 text-white">
+        <h1 className="text-4xl font-bold mb-6">
+          No Analysis Found 😢
+        </h1>
+
+        <button
+          onClick={() => navigate("/")}
+          className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-xl"
+        >
+          Go Back
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 text-white p-10">
-      <h1 className="text-5xl font-bold text-center mb-10">
+
+      <h1 className="text-5xl font-bold text-center mb-12">
         🎵 Your Vibe Analysis
       </h1>
 
-      <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl p-8">
+      <div className="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-10 shadow-xl">
 
-        <div className="grid grid-cols-2 gap-6 text-xl">
-          <p><strong>Mood:</strong> {dummyData.mood}</p>
-          <p><strong>Location:</strong> {dummyData.location}</p>
-          <p><strong>Outfit:</strong> {dummyData.outfit}</p>
-          <p><strong>Lighting:</strong> {dummyData.lighting}</p>
-          <p><strong>Vibe Score:</strong> {dummyData.vibeScore}%</p>
+        <div className="grid md:grid-cols-2 gap-10 text-2xl">
+
+          <p>
+            <strong>Mood:</strong> {state.mood}
+          </p>
+
+          <p>
+            <strong>Location:</strong> {state.location}
+          </p>
+
+          <p>
+            <strong>Outfit:</strong> {state.outfit}
+          </p>
+
+          <p>
+            <strong>Lighting:</strong> {state.lighting}
+          </p>
+
         </div>
 
-        <h2 className="text-3xl mt-10 mb-5">Recommended Songs</h2>
+        <h2 className="text-4xl font-bold mt-16 mb-8">
+          🎵 Recommended Songs
+        </h2>
 
-        {dummyData.songs.map((song, index) => (
-          <div
-            key={index}
-            className="flex justify-between bg-slate-800 p-4 rounded-xl mb-3"
-          >
-            <div>
-              <h3 className="font-bold">{song.title}</h3>
-              <p>{song.artist}</p>
+        <div className="space-y-5">
+
+          {state.songs.map((song, index) => (
+            <div
+              key={index}
+              className="bg-slate-800 rounded-2xl p-6 text-xl"
+            >
+              {song}
             </div>
+          ))}
 
-            <span>{song.match}</span>
-          </div>
-        ))}
+        </div>
 
-        <div className="mt-10">
-          <h2 className="text-3xl mb-3">AI Caption</h2>
+        <h2 className="text-4xl font-bold mt-16 mb-6">
+          ✍️ Caption
+        </h2>
 
-          <div className="bg-slate-800 rounded-xl p-5 italic">
-            "{dummyData.caption}"
-          </div>
+        <div className="bg-slate-800 rounded-2xl p-6 text-xl italic">
+          {state.caption}
         </div>
 
       </div>
+
     </div>
   );
 }
