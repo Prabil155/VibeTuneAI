@@ -25,54 +25,55 @@ function Results() {
     <div className="min-h-screen bg-slate-950 text-white p-10">
 
       <h1 className="text-5xl font-bold text-center mb-12">
-        🎵 Your Vibe Analysis
+        🎵 AI Vibe Analysis
       </h1>
 
       <div className="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-10 shadow-xl">
 
-        <div className="grid md:grid-cols-2 gap-10 text-2xl">
+        <div className="grid md:grid-cols-2 gap-8 text-xl">
 
-          <p>
-            <strong>Mood:</strong> {state.mood}
-          </p>
+          <div>
+            <strong>😊 Mood</strong>
+            <p>{state.mood}</p>
+          </div>
 
-          <p>
-            <strong>Location:</strong> {state.location}
-          </p>
+          <div>
+            <strong>📍 Location</strong>
+            <p>{state.location}</p>
+          </div>
 
-          <p>
-            <strong>Outfit:</strong> {state.outfit}
-          </p>
+          <div>
+            <strong>👕 Outfit</strong>
+            <p>{state.outfit}</p>
+          </div>
 
-          <p>
-            <strong>Lighting:</strong> {state.lighting}
-          </p>
+          <div>
+            <strong>🌅 Lighting</strong>
+            <p>{state.lighting}</p>
+          </div>
 
-        </div>
+          <div>
+            <strong>✨ Aesthetic</strong>
+            <p>{state.aesthetic}</p>
+          </div>
 
-        <h2 className="text-4xl font-bold mt-16 mb-8">
-          🎵 Recommended Songs
-        </h2>
-
-        <div className="space-y-5">
-
-          {state.songs.map((song, index) => (
-            <div
-              key={index}
-              className="bg-slate-800 rounded-2xl p-6 text-xl"
-            >
-              {song}
-            </div>
-          ))}
+          <div>
+            <strong>🎨 Colors</strong>
+            <p>{state.colors?.join(", ")}</p>
+          </div>
 
         </div>
 
-        <h2 className="text-4xl font-bold mt-16 mb-6">
-          ✍️ Caption
-        </h2>
+        <div className="mt-12">
 
-        <div className="bg-slate-800 rounded-2xl p-6 text-xl italic">
-          {state.caption}
+          <h2 className="text-3xl font-bold mb-4">
+            🧠 AI Reasoning
+          </h2>
+
+          <div className="bg-slate-800 rounded-2xl p-6 text-lg">
+            {state.reasoning}
+          </div>
+
         </div>
 
       </div>
