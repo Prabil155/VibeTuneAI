@@ -1,8 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 function Results() {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const currentAudio = useRef(null);
 
   if (!state) {
     return (
@@ -86,9 +88,24 @@ function Results() {
                   </p>
 
                   {song.preview && (
-                    <audio controls className="mt-4 w-full">
-                      <source src={song.preview} type="audio/mpeg" />
-                    </audio>
+                    <audio
+  controls
+  className="mt-4 w-full"
+  ref={(audio) => {
+    if (!audio) return;
+
+    audio.onplay = () => {
+      if (currentAudio.current && currentAudio.current !== audio) {
+        currentAudio.current.pause();
+        currentAudio.current.currentTime = 0;
+      }
+
+      currentAudio.current = audio;
+    };
+  }}
+>
+  <source src={song.preview} type="audio/mpeg" />
+</audio>
                   )}
 
                 </div>

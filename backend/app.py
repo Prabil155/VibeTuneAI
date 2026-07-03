@@ -32,7 +32,7 @@ def home():
 async def analyze(file: UploadFile = File(...)):
     try:
         print("\n==============================")
-        print("📸 Image received")
+        print(" Image received")
 
         # Save uploaded image
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
@@ -45,34 +45,36 @@ async def analyze(file: UploadFile = File(...)):
         # Analyze image
         result = analyze_image(file_path)
 
-        print("\n✅ Gemini Response:")
+        print("\n Gemini Response:")
         print(result)
 
         # Check if Gemini returned a genre
         genre = result.get("genre")
 
         if not genre:
-            print("❌ No genre returned from Gemini!")
+            print(" No genre returned from Gemini!")
             result["songs"] = []
             return result
 
         print(f"\n🎵 Searching Spotify for genre: {genre}")
 
         # Search Spotify
-        songs = get_recommended_songs(genre)
+        songs = get_recommended_songs(
+    result["recommended_songs"]
+)
 
-        print(f"✅ Spotify returned {len(songs)} songs")
+        print(f" Spotify returned {len(songs)} songs")
 
         result["songs"] = songs
 
-        print("\n🚀 Final Response:")
+        print("\n Final Response:")
         print(result)
         print("==============================\n")
 
         return result
 
     except Exception as e:
-        print("\n❌ ERROR OCCURRED")
+        print("\n ERROR OCCURRED")
         traceback.print_exc()
 
         raise HTTPException(

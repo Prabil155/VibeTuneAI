@@ -15,11 +15,15 @@ def analyze_image(image_path):
     image = Image.open(image_path)
 
     prompt = """
-You are an expert fashion stylist, photographer, travel blogger, and music curator.
+You are an expert photographer, fashion stylist, psychologist, travel blogger and music curator.
 
-Analyze the uploaded image carefully.
+Analyze the uploaded image.
 
-Return ONLY valid JSON in this exact format:
+Recommend songs that perfectly match the vibe of the image.
+
+The songs should fit the mood, colors, atmosphere, lighting, emotions and aesthetic.
+
+Return ONLY valid JSON.
 
 {
   "mood": "",
@@ -29,8 +33,40 @@ Return ONLY valid JSON in this exact format:
   "aesthetic": "",
   "genre": "",
   "caption": "",
-  "reasoning": ""
+  "reasoning": "",
+  "recommended_songs": [
+    {
+      "title": "",
+      "artist": ""
+    },
+    {
+      "title": "",
+      "artist": ""
+    },
+    {
+      "title": "",
+      "artist": ""
+    },
+    {
+      "title": "",
+      "artist": ""
+    },
+    {
+      "title": "",
+      "artist": ""
+    }
+  ]
 }
+
+Return exactly five songs.
+
+Choose real songs.
+
+Do not invent songs.
+
+Do not return markdown.
+
+Return only JSON.
 
 Instructions:
 
