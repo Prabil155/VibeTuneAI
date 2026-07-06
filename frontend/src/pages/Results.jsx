@@ -29,6 +29,16 @@ function Results() {
       <h1 className="text-5xl font-bold text-center mb-12">
         🎵 Your Vibe Analysis
       </h1>
+      
+      {state.uploadedImage && (
+  <div className="flex justify-center mb-12">
+    <img
+      src={state.uploadedImage}
+      alt="Uploaded"
+      className="w-full max-w-xl rounded-3xl shadow-2xl border border-slate-700"
+    />
+  </div>
+)}
 
       <div className="max-w-6xl mx-auto bg-slate-900 rounded-3xl p-10 shadow-xl">
 

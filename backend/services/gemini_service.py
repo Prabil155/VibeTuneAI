@@ -32,6 +32,7 @@ Return ONLY valid JSON.
   "lighting": "",
   "aesthetic": "",
   "genre": "",
+  "theme":""
   "caption": "",
   "reasoning": "",
   "recommended_songs": [
@@ -96,6 +97,16 @@ Ambient
 K-Pop
 Afrobeats
 Country
+
+Choose ONLY one of these themes:
+
+neon_city
+sunset
+ocean
+forest
+cozy_cafe
+cosmic
+default
 
 caption = Write one creative Instagram caption.
 

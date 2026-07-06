@@ -5,9 +5,7 @@ function Navbar() {
         🎵 VibeTune AI
       </h1>
 
-      <button className="bg-purple-600 hover:bg-purple-700 transition px-5 py-2 rounded-xl font-semibold">
-        Login
-      </button>
+      
     </nav>
   );
 }
