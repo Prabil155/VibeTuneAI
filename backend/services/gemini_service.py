@@ -32,7 +32,7 @@ Return ONLY valid JSON.
   "lighting": "",
   "aesthetic": "",
   "genre": "",
-  "theme":""
+  "vibe_score": 0,
   "caption": "",
   "reasoning": "",
   "recommended_songs": [
