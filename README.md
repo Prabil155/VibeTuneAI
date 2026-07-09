@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-**Frontend:** https://vibe-tune-ai-jt8a.vercel.app/results
+**Frontend:** https://vibe-tune-ai-jt8a.vercel.app
 
 **Backend API:** https://vibetuneai-2.onrender.com/
 
