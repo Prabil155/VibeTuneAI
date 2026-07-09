@@ -78,23 +78,6 @@ It then recommends songs that match the overall vibe using the **Deezer API**, g
 
 ---
 
-## Screenshots
-
-## Landing Page
-
-![Landing Page](assets/landing.png),
-(assests/landing2.png)
-
-## 🤖 AI Loading
-
-![Loading](assets/loading.png)
-
-## 🎵 Results
-
-![Results](assets/results.png)
-
----
-
 ## Installation
 
 ### Clone Repository
